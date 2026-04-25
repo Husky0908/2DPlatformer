@@ -7,6 +7,7 @@
 size = Vector2(126, 129)
 
 [node name="Player" type="CharacterBody2D" unique_id=1165869470]
+scale = Vector2(0.225, 0.225)
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1722512802]
