@@ -4,15 +4,34 @@
 [ext_resource type="Texture2D" uid="uid://c7b1c27shjh74" path="res://icon.svg" id="2_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(126, 129)
+size = Vector2(124.44446, 121.77778)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(20, 113.611115)
 
 [node name="Player" type="CharacterBody2D" unique_id=1165869470]
 scale = Vector2(0.225, 0.225)
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1722512802]
-position = Vector2(-2, -0.5)
+position = Vector2(1.9868216e-06, 3.1111107)
 shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1512100408]
 texture = ExtResource("2_qhqgy")
+
+[node name="jobb" type="Area2D" parent="." unique_id=333038593]
+position = Vector2(62.222225, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jobb" unique_id=1780273840]
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="bal" type="Area2D" parent="." unique_id=887207573]
+position = Vector2(-62.222, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bal" unique_id=466458215]
+position = Vector2(0, -3.4722214)
+shape = SubResource("RectangleShape2D_g2els")
+
+[connection signal="body_entered" from="jobb" to="." method="_on_jobb_body_entered"]
+[connection signal="body_entered" from="bal" to="." method="_on_bal_body_entered"]
